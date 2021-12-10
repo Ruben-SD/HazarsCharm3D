@@ -10,7 +10,6 @@ public class DestroyOnCollision : MonoBehaviour
 
     public void OnCollisionEnter(Collision myCol)
     {
-        Debug.Log("Collision with " + myCol.gameObject);
         foreach(string tag in tagName) {
             if (myCol.gameObject.tag == tag) {
                 AudioSource.PlayClipAtPoint(clip, transform.position, volume);

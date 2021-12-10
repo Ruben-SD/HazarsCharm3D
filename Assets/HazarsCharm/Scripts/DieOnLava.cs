@@ -5,14 +5,20 @@ using UnityEngine;
 public class DieOnLava : MonoBehaviour
 {
     public string[] tagName;
-    public AudioClip clip;
-    public float volume=1;
+    AudioSource animationSoundPlayer;
+
+    void Start()
+    {
+        animationSoundPlayer = GetComponent<AudioSource>();
+    }
 
     public void OnCollisionEnter(Collision myCol)
     {
-        if (myCol.gameObject.tag == tag) {
-            AudioSource.PlayClipAtPoint(clip, transform.position, volume);
-            Destroy(this.gameObject);
+        foreach(string tag in tagName) {
+            if (myCol.gameObject.tag == tag) {
+                animationSoundPlayer.Play();
+                Destroy(this.gameObject);
+            }
         }
     }
 }
