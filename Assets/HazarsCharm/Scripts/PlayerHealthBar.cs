@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 
@@ -16,7 +17,7 @@ public class PlayerHealthBar : MonoBehaviour
             healthBar.SetHealth(hitPoints);
             if(hitPoints <= 0)
             {
-
+                SceneManager.LoadScene("hillClimb");
             }
         }
     }

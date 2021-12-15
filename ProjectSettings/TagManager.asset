@@ -9,6 +9,8 @@ TagManager:
   - Lava
   - Boulder
   - Water
+  - Terrain
+  - Tile
   layers:
   - Default
   - TransparentFX
