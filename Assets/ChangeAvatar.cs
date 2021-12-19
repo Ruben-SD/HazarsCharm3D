@@ -10,12 +10,18 @@ public class ChangeAvatar : MonoBehaviour
         if (col.tag == tagName)
         {
             player = col.gameObject.transform.parent.gameObject;
+            //player.GetComponent<ThirdPersonCamera>().enabled = false;
             SetChildren(player, false);
 
+
             rocket = this.transform.parent.gameObject.transform.parent.gameObject;
+            //rocket.GetComponent<Camera>().enabled = false;
             EnableScripts(rocket);
             EnableComponents(rocket);
             SetChildren(rocket, true);
+
+            Debug.Log("Player name: " + player.name);
+            Debug.Log("Suit name: " + rocket.name);
         }
     }
 

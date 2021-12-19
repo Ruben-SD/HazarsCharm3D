@@ -11,6 +11,8 @@ public class ThirdPersonCamera : MonoBehaviour
     public Transform camTransform;
     public float distance = 40.0f;
 
+    public bool enabled;
+
     private float currentX = 0.0f;
     private float currentY = 45.0f;
     private float sensitivityX = 20.0f;
@@ -19,21 +21,27 @@ public class ThirdPersonCamera : MonoBehaviour
     private void Start()
     {
         camTransform = transform;
+        enabled = true;
     }
 
     private void Update()
     {
-        currentX += Input.GetAxis("Mouse X");
-        currentY += Input.GetAxis("Mouse Y");
+        if (enabled) {
+            currentX += Input.GetAxis("Mouse X");
+            currentY += Input.GetAxis("Mouse Y");
 
-        currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
+            currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
+        }
     }
 
     private void LateUpdate()
     {
-        Vector3 dir = new Vector3(0, 0, -distance);
-        Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
-        camTransform.position = lookAt.position + rotation * dir;
-        camTransform.LookAt(lookAt.position);
+        if (enabled) {
+            Vector3 dir = new Vector3(0, 0, -distance);
+            Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
+            camTransform.position = lookAt.position + rotation * dir;
+            camTransform.LookAt(lookAt.position);
+        }
+        
     }
 }
