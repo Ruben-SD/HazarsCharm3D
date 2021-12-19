@@ -12,7 +12,7 @@ public class ChangeAvatar : MonoBehaviour
             player = col.gameObject.transform.parent.gameObject;
             //player.GetComponent<ThirdPersonCamera>().enabled = false;
             SetChildren(player, false);
-
+            //player.GetComponent<ThirdPersonCamera>().gameObject.transform.parent = this.transform;
 
             rocket = this.transform.parent.gameObject.transform.parent.gameObject;
             //rocket.GetComponent<Camera>().enabled = false;
