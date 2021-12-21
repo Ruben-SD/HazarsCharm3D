@@ -3,19 +3,30 @@ using UnityEngine;
 public class ChangeAvatar : MonoBehaviour
 {
     public string tagName;
+    public string nameCamera;
 
     private void OnTriggerEnter(Collider col)
     {
-        GameObject astronaut_suit, player;
+        GameObject oldAvatar, newAvatar;
         if (col.tag == tagName)
         {
-            player = col.gameObject.transform.parent.gameObject;
-            SetChildren(player, false);
+            // Astronaut Suit to Rocket
+            if (tagName == "Finish")
+                oldAvatar = col.gameObject;
+            // Kid to Astronaut Suit
+            else
+                oldAvatar = col.gameObject.transform.parent.gameObject;
+            SetChildren(oldAvatar, false);
 
-            astronaut_suit = this.transform.parent.gameObject.transform.parent.gameObject;
-            EnableScripts(astronaut_suit);
-            EnableComponents(astronaut_suit);
-            SetChildren(astronaut_suit, true);
+            // Astronaut Suit to Rocket
+            if (tagName == "Finish")
+                newAvatar = this.transform.parent.gameObject;
+            // Kid to Astronaut Suit
+            else
+                newAvatar = this.transform.parent.gameObject.transform.parent.gameObject;
+            EnableScripts(newAvatar);
+            EnableComponents(newAvatar);
+            SetChildren(newAvatar, true);
         }
     }
 
@@ -30,8 +41,18 @@ public class ChangeAvatar : MonoBehaviour
 
     private void EnableComponents(GameObject gameObject)
     {
-        gameObject.GetComponent<Animator>().enabled = true;
-        gameObject.GetComponent<CharacterController>().enabled = true;
+        GameObject rocketCamera;
+        if (tagName == "Finish")
+        {
+            rocketCamera = GameObject.Find(nameCamera);
+            rocketCamera.GetComponent<Camera>().enabled = true;
+            rocketCamera.GetComponent<AudioListener>().enabled = true;
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().enabled = true;
+            gameObject.GetComponent<CharacterController>().enabled = true;
+        }
     }
 
     private void SetChildren(GameObject gameObject, bool option)
