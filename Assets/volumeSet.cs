@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class volumeSet : MonoBehaviour
 {
     [SerializeField] private Slider volumeSlider = null;
-    [SerializeField] private Text volumeText = null;
+    [SerializeField] private TMP_Text volumeText = null;
 
     private void Start()
     {
