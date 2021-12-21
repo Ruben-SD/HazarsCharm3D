@@ -10,7 +10,8 @@ public class ChangeAvatar : MonoBehaviour
         if (col.tag == tagName)
         {
             player = col.gameObject.transform.parent.gameObject;
-            //player.GetComponent<ThirdPersonCamera>().enabled = false;
+
+            player.GetComponent<ThirdPersonCamera>().lookAt = this.transform.parent.gameObject.transform.parent.gameObject.transform;
             SetChildren(player, false);
             //player.GetComponent<ThirdPersonCamera>().gameObject.transform.parent = this.transform;
 
