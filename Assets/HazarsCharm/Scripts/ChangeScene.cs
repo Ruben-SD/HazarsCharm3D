@@ -5,7 +5,6 @@ public class ChangeScene : MonoBehaviour
 {
     private void OnTriggerEnter(Collider col)
     {
-        SceneManager.UnloadSceneAsync("hillClimb");
-        SceneManager.LoadScene("planets");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
