@@ -104,13 +104,13 @@ public class PlayerBlanca : MonoBehaviour
 		anim.SetInteger("AnimationPar", 0);
 
 		//if (Input.GetKey(KeyCode.UpArrow)) { transform.Translate(new Vector3(0, 0, speed * Time.deltaTime)); anim.SetInteger("AnimationPar", 1); };
-		if (Input.GetKey(KeyCode.UpArrow))
+		if (Input.GetKey("w"))
 		{
 			transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
 			anim.SetInteger("AnimationPar", 1);
 		};
 
-		if (Input.GetKey(KeyCode.DownArrow))
+		if (Input.GetKey("s"))
 		{
 			transform.Translate(new Vector3(0, 0, -speed * Time.deltaTime));
 			anim.SetInteger("AnimationPar", 1);
@@ -118,12 +118,12 @@ public class PlayerBlanca : MonoBehaviour
 
 
 
-		if (Input.GetKey(KeyCode.LeftArrow))
+		if (Input.GetKey("a"))
 		{
 			transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
 			//transform.Translate(new Vector3(-rotacionAsteroide.x * Time.deltaTime * 0.10f, -rotacionAsteroide.y * Time.deltaTime * 0.10f, -rotacionAsteroide.z * Time.deltaTime * 0.10f));
 		};
-		if (Input.GetKey(KeyCode.RightArrow))
+		if (Input.GetKey("d"))
 		{
 			transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
 			//transform.Translate(new Vector3(-rotacionAsteroide.x * Time.deltaTime * 0.10f, -rotacionAsteroide.y * Time.deltaTime * 0.10f, -rotacionAsteroide.z * Time.deltaTime * 0.10f));
