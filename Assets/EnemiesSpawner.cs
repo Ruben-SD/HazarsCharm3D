@@ -17,7 +17,6 @@ public class EnemiesSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            portal.Activate();
     }
 
     public void Spawner()
@@ -35,7 +34,7 @@ public class EnemiesSpawner : MonoBehaviour
         Follower follower = shot.AddComponent<Follower>();
         follower.Follow(player);
 
-        if (enemyCounter < 30)
+        if (enemyCounter < 25)
             Invoke("Spawner", Random.Range(0.3f, 3.0f));
         else 
         {

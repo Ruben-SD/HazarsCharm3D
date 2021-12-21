@@ -20,6 +20,7 @@ public class Portal : MonoBehaviour
 
     public void Activate()
     {
+        Debug.Log("Deactivated");
         this.gameObject.transform.GetComponent<MeshRenderer>().enabled = false;
         this.gameObject.transform.GetComponent<BoxCollider>().enabled = true;
         //Destroy(lava);

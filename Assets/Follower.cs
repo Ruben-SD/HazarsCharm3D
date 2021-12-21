@@ -27,7 +27,7 @@ public class Follower : MonoBehaviour
 
     public void Follow(GameObject obj)
     {
-        speed = Random.Range(1.0f, 5.0f);
+        speed = Random.Range(3.0f, 6.0f);
         this.player = obj;
         follow = true;
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class Health : MonoBehaviour
     public void DecreaseHealth()
     {
         if (health > 0)
+        {
             --health;
+        }
+        else {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 }
