@@ -19,7 +19,7 @@ public class isfinished : MonoBehaviour
     void Update()
     {
         if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
         }
     }
 }
