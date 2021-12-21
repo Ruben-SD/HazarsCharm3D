@@ -1,0 +1,43 @@
+Hazar's charm 3D (HillClimb)
+
+- Mapa
+	· Formado por una cuadrícula de 3x3 en la cual el jugador sólo se puede mover por la central que es donde se desarrolla el juego, se ha creado a mano y se le han añadido árboles, además incluye:
+		+ Muros invisibles:
+			Evitan que el jugador o las bombas piroclásticas salgan de la escena.
+		+ Zonas de lava:
+			- La superior e inferior se dividen en 2, la capa render se puede atravesar (aunque quita 50 puntos de vida) mientras que la capa collider es sólida, esta es la que interactúa con las bombas piroclásticas destruyéndolas a la vez que se ejecuta un sonido (inferior y río) o haciéndolas rebotar para crear la ilusión de que las está expulsando el volcán (superior).
+			- El río de lava es un cilindro inclinado y ligeramente ovalado, su colider es un poco más pequeño para crear el efecto de sumergirse en lava.
+			- Las zonas de lava incorporan un pequeño script que mueve la textura del objeto dando la sensación de que fluye.
+		+ Zonas de agua:
+			- Son iguales que las zonas de lava pero no interactúan con nada, en este caso la cascada se ha implementado con un plano e incluye sonido.
+		+ Señales:
+			Indican el camino al traje de astronauta.
+		+ Puentes:
+			Hay un puente de piedra en la zona superior del mapa y varios formando un camino hacia la cima.
+		+ Bombas pirocásticas:
+			+ La original está ubicada en el interior del volcán, a partir de esta se generan de forma aleatoria entre las capas superiores de lava, al caer y entrar en contacto con estas salen disparadas hacia arriba donde chocan entre ellas.
+			+ El comportamiento de las bombas se controla mediante dos scripts.
+			+ El impacto de una bomba piroclástica resta 50 puntos de vida.
+
+- Jugador
+	· Está basado en los starter assets, funciona indistintamente con teclado y ratón o gamepad.
+	· Se puede andar con WASD, las flechas, o el joystick izquierdo de un mando.
+	· La cámara se controla con el ratón o el joystick derecho.
+	· Se salta con barra espaciadora o el botón B (mando de Nintendo) o A (Xbox) y se esprinta con mayúsculas izquierda (R en el mando de Nintendo y RB en el de Xbox).
+	· Se ha cambiado el avatar por uno acorde a la temática del juego.
+	· Se ha añadido sonido de pisadas, sin embargo no se lanzan los eventos al completar la animación.
+	· Se añadió el sistema de salud de Candice A.I. y se incorporó la barra de salud al HUD, además se añadió el daño de la lava y bombas.
+	· Para detectar colisiones con otros personajes u objetos se le añadió una cápsula que actúa a modo de collider.
+
+- Traje de astronauta (meta)
+	· Es otro jugador, al tocarlo se pasa el control y cámara a este, el cual no recibe daño, además se avanzará a la siguiente escena.
+	· Fue necesario añadirle una cápsula a modo de esfera para detectar la colisión con el jugador y lanzar el script de cambio de personaje (simplemente activa uno y desactiva el otro, Unity se encarga del resto).
+
+- Enemigos
+	· Se controlan mediante prefabs, en concreto Candice A.I., se ha creado un GameObject con el manejador de I.A. y varios grupos de enemigos con distintos stats (más o menos velocidad y daño de ataque).
+
+- Sonidos
+	· Se reproducen de forma continua el sonido del viento y la caída de un trueno, este último se ha ralentizado su repetición para simular una tormenta.
+
+- Música
+	· Al igual que los sonidos, tiene su propio contenedor y se reproduce de forma continua.
