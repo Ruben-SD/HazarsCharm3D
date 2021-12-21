@@ -48,7 +48,6 @@ public class PlayerBlanca : MonoBehaviour
 
 		if (cercanoAntiguo != masCercano) { gravedadactualizada = true; };
 		transform.parent = asteroides[masCercano].transform;
-		//gravedadactualizada = true;
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -69,41 +68,20 @@ public class PlayerBlanca : MonoBehaviour
 		};
 	}
 
-	void FixedUpdate()
-	{
-		//if (gravedadactualizada) { asteroideActual = asteroides[masCercano]; };
-		//rotacionAsteroide = asteroideActual.gameObject.GetComponent<rotate>().turnVector;
-	}
-
 
 	void Update()
 	{
 
-		//if (Input.GetKey("w"))
-		//{
-		//anim.SetInteger("AnimationPar", 1);
-		//}
-		//else
-		//{
-		//anim.SetInteger("AnimationPar", 0);
-		//}
-
 		if (controller.isGrounded)
 		{
 			jumping = false;
-			//transform.Translate(new Vector3(-rotacionAsteroide.x * Time.deltaTime, -rotacionAsteroide.y * Time.deltaTime,- rotacionAsteroide.z * Time.deltaTime));
-			//transform.Translate(asteroideActual.transform.up* -rotacionAsteroide.z * Time.deltaTime);
-			//transform.Translate( new Vector3(-rotacionAsteroide.x * Time.deltaTime*20.00f, -rotacionAsteroide.y * Time.deltaTime * 20.00f, -rotacionAsteroide.z * Time.deltaTime * 20.00f));
 		}
-		//transform.Translate(asteroideActual.transform.up * -rotacionAsteroide.z * Time.deltaTime);
-
 
 		ActualizarGravedad();
 
 
 		anim.SetInteger("AnimationPar", 0);
 
-		//if (Input.GetKey(KeyCode.UpArrow)) { transform.Translate(new Vector3(0, 0, speed * Time.deltaTime)); anim.SetInteger("AnimationPar", 1); };
 		if (Input.GetKey("w"))
 		{
 			transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
@@ -121,12 +99,10 @@ public class PlayerBlanca : MonoBehaviour
 		if (Input.GetKey("a"))
 		{
 			transform.Rotate(0, -turnSpeed * Time.deltaTime, 0);
-			//transform.Translate(new Vector3(-rotacionAsteroide.x * Time.deltaTime * 0.10f, -rotacionAsteroide.y * Time.deltaTime * 0.10f, -rotacionAsteroide.z * Time.deltaTime * 0.10f));
 		};
 		if (Input.GetKey("d"))
 		{
 			transform.Rotate(0, turnSpeed * Time.deltaTime, 0);
-			//transform.Translate(new Vector3(-rotacionAsteroide.x * Time.deltaTime * 0.10f, -rotacionAsteroide.y * Time.deltaTime * 0.10f, -rotacionAsteroide.z * Time.deltaTime * 0.10f));
 		};
 
 		if (Input.GetKeyDown(KeyCode.Space) && (!jumping))
