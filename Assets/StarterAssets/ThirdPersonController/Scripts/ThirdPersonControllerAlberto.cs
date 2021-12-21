@@ -86,6 +86,9 @@ namespace StarterAssets
 		private CharacterController _controller;
 		private StarterAssetsInputs _input;
 		private GameObject _mainCamera;
+		public AudioSource footstepSFX;
+		public GameObject hand;
+		bool playingFootstepSFX = false;
 
 		private const float _threshold = 0.01f;
 
@@ -120,6 +123,36 @@ namespace StarterAssets
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+
+			if (_speed > 0.5f && !Grounded && !playingFootstepSFX)
+			{
+				playingFootstepSFX = true;
+				//footstepSFX.Play();
+			}
+			if (_speed < 0.5f)
+			{
+				playingFootstepSFX = false;
+				//footstepSFX.Stop();
+			}
+
+			RaycastHit hitInfo;
+			Ray r = new Ray(this.transform.position, this.transform.forward); //A ray starting from the camera, going forward
+
+			//if we hit something
+			if (Physics.Raycast(r, out hitInfo))
+			{
+				//if it is tagged as a weapon
+				
+				//if the user presses F
+				if (Keyboard.current.fKey.wasReleasedThisFrame)
+				{
+					if (hitInfo.transform.CompareTag("Weapon"))
+					{
+						Destroy(hitInfo.transform.gameObject);
+						this.gameObject.GetComponent<Gun>().canShoot = true;
+					}
+				}				
+			}
 		}
 
 		private void LateUpdate()

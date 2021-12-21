@@ -6,6 +6,7 @@ public class EnemiesSpawner : MonoBehaviour
 {
     public GameObject bullet;
     public GameObject player;
+    public Portal portal;
     int enemyCounter = 0;
 
     // Start is called before the first frame update
@@ -16,6 +17,7 @@ public class EnemiesSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+            portal.Activate();
     }
 
     public void Spawner()
@@ -35,5 +37,9 @@ public class EnemiesSpawner : MonoBehaviour
 
         if (enemyCounter < 30)
             Invoke("Spawner", Random.Range(0.3f, 3.0f));
+        else 
+        {
+            portal.Activate();
+        }
     }
 }
