@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44853336, g: 0.49858165, b: 0.57565325, a: 1}
+  m_IndirectSpecularColor: {r: 0.44853312, g: 0.49858105, b: 0.5756524, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1696,7 +1696,7 @@ MonoBehaviour:
   SprintSpeed: 8
   RotationSmoothTime: 0.06
   SpeedChangeRate: 10
-  JumpHeight: 3
+  JumpHeight: 0
   Gravity: -15
   JumpTimeout: 0.1
   FallTimeout: 0.3
@@ -1711,6 +1711,8 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
+  footstepSFX: {fileID: 0}
+  hand: {fileID: 0}
 --- !u!143 &216683583
 CharacterController:
   m_ObjectHideFlags: 0
