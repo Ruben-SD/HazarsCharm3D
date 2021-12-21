@@ -11,6 +11,7 @@ TagManager:
   - Water
   - Terrain
   - Tile
+  - Rocket
   layers:
   - Default
   - TransparentFX
