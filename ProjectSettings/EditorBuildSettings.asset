@@ -11,9 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/initialtext.unity
     guid: 8a5f190131f84df46a1071821e678d79
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
 <<<<<<< Updated upstream
 =======
@@ -26,6 +23,12 @@ EditorBuildSettings:
 >>>>>>> Stashed changes
     path: Assets/Scenes/Platforms.unity
     guid: 6ee43e551cb6f984288fc80aaa3401d7
+  - enabled: 1
+    path: Assets/Scenes/SlipperySlope/SlipperySlope.unity
+    guid: 7b8dbbfe44743954e8259a41746cce7b
+  - enabled: 1
+    path: Assets/Scenes/Maze.unity
+    guid: 27f8ea3eefe3a274e86a2ff53ee4916d
   - enabled: 1
     path: Assets/Scenes/hillClimb.unity
     guid: 3fdf0bcd4051b7542900c5704506763b
