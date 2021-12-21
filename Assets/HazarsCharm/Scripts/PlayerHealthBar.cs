@@ -17,7 +17,7 @@ public class PlayerHealthBar : MonoBehaviour
             healthBar.SetHealth(hitPoints);
             if(hitPoints <= 0)
             {
-                SceneManager.LoadScene("hillClimb");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }

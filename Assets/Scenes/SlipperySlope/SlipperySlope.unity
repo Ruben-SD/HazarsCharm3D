@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44853276, g: 0.4985807, b: 0.57565206, a: 1}
+  m_IndirectSpecularColor: {r: 0.44853312, g: 0.49858105, b: 0.5756524, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1696,7 +1696,7 @@ MonoBehaviour:
   SprintSpeed: 8
   RotationSmoothTime: 0.06
   SpeedChangeRate: 10
-  JumpHeight: 3
+  JumpHeight: 0
   Gravity: -15
   JumpTimeout: 0.1
   FallTimeout: 0.3
