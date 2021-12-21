@@ -10,7 +10,7 @@ public class Rotator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = Random.Range(80.0f, 125.0f);
+        speed = Random.Range(60.0f, 95.0f);
     }
 
     // Update is called once per frame

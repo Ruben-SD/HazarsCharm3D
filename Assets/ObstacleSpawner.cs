@@ -28,9 +28,9 @@ public class ObstacleSpawner : MonoBehaviour
         pos.z += Random.Range(-depth*0.9f, depth*0.9f);
         GameObject shot = Instantiate(bullet, pos, Quaternion.identity);
         shot.AddComponent<Rigidbody>();
-        shot.GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(width*0.5f, width*0.95f), Random.Range(0, 2), Random.Range(-width/5, width/5));
+        shot.GetComponent<Rigidbody>().velocity = new Vector3(Random.Range(width*0.4f, width*0.8f), Random.Range(0, 2), Random.Range(-width/5, width/5));
 
-        Invoke("Spawner", Random.Range(0, 0.2f));
+        Invoke("Spawner", Random.Range(0, 0.5f));
     }
 
     private void OnTriggerEnter(Collider other)

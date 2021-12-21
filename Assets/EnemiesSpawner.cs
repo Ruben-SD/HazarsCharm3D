@@ -34,7 +34,7 @@ public class EnemiesSpawner : MonoBehaviour
         Follower follower = shot.AddComponent<Follower>();
         follower.Follow(player);
 
-        if (enemyCounter < 25)
+        if (enemyCounter < 20)
             Invoke("Spawner", Random.Range(0.3f, 3.0f));
         else 
         {
