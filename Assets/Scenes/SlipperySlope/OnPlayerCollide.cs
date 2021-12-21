@@ -1,24 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(AudioSource))]
 public class OnPlayerCollide : MonoBehaviour
 {
-    Vector3 originalPos;
+    AudioSource animationSoundPlayer;
 
     void Start()
     {
-        originalPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-        originalPos = gameObject.transform.position;
-
+        animationSoundPlayer = GetComponent<AudioSource>(); 
     }
     void OnTriggerEnter(Collider other)
     {
-        gameObject.transform.position = originalPos;
         if (other.gameObject.tag == "fakeDoor")
         {
-            gameObject.transform.position = originalPos;
-        }
 
+            animationSoundPlayer.Play();
+            SceneManager.LoadScene("SlipperySlope");
+        }
+        if (other.gameObject.tag == "FinishLine")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        }
     }
 }
