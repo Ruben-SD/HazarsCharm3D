@@ -201,11 +201,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Erase una vez un viejo y malvado mago, que secuestraba ni\xF1os para que
-    se adentrasen en mundos salvajes y consiguiesen los ingredientes exoticos para
-    sus pociones. El mago les prometia la libertad a cambio de que consiguiesen una
-    gran cantidad de ingredientes para el, pero aun asi, a los ni\xF1os, y con razon,
-    no les parecia un trato justo... tanto es asi que uno de ellos intento escaparse"
+  m_text: Once upon a time, there was an old and evil wizard, who kidnapped children
+    to enter wild worlds and obtain exotic ingredients for his potions. The magician
+    promised them freedom in exchange for getting a lot of ingredients for him, but
+    even so, the children, and with good reason, did not think it was a fair deal
+    ... so much so that one of them tried to escape...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8af5fb849ec0eb04c8eae6d40370d229, type: 2}
   m_sharedMaterial: {fileID: -1607159157280592517, guid: 8af5fb849ec0eb04c8eae6d40370d229, type: 2}
@@ -300,11 +300,6 @@ MonoBehaviour:
   MultiStrings:
   - 
   ORIGINAL_TEXT: 
-  time: 0
-  "\u0441harIndex": 0
-  index_of_string: 0
-  start: 0
-  n_l_list: 
 --- !u!1 &636133656
 GameObject:
   m_ObjectHideFlags: 0
@@ -666,11 +661,6 @@ MonoBehaviour:
   MultiStrings:
   - 
   ORIGINAL_TEXT: 
-  time: 0
-  "\u0441harIndex": 0
-  index_of_string: 0
-  start: 0
-  n_l_list: 
 --- !u!1 &1705648571
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,7 +712,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eb10b6f571322b443bec8c532c088270, type: 2}
+  - {fileID: 2100000, guid: 0573ab98ab6cd584d91cd649aababa8b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
