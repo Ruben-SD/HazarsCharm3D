@@ -18,6 +18,6 @@ public class LoadFirstScene : MonoBehaviour
 
     void LoadScene()
     {
-        SceneManager.LoadScene("Platforms");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
