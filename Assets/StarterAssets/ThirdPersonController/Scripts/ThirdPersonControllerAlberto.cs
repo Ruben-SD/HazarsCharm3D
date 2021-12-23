@@ -105,6 +105,7 @@ namespace StarterAssets
 
 		private void Start()
 		{
+			Cursor.visible = false;
 			_hasAnimator = TryGetComponent(out _animator);
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();

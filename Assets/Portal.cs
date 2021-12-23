@@ -28,7 +28,7 @@ public class Portal : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        SceneManager.LoadScene("hillClimb");
+        SceneManager.LoadScene("SlipperySlope");
     }
 
 }
